@@ -1,5 +1,5 @@
 <?php
-	require_once('../f/conf/db.db');
+	require_once('db.db');
 	require_once('../forum/SSI.php');
 	require_once('../forum/smf_2_api.php');
 	
@@ -7,7 +7,7 @@
 	
 	if ($context['user']['is_guest'])
 		{
-			echo '<h1>You are not logged into the TLO website, please log into the forums and then return here.';
+			echo '<h1>You are not logged into the forum, please log into the forums and then return here.';
 		}
 	else
 		{

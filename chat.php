@@ -1,10 +1,10 @@
 <?php
 	require_once('../forum/SSI.php');
-	require_once('../f/conf/db.db');
+	require_once('db.db');
 	
 	if ($context['user']['is_guest'])
 		{
-			echo '<h1>You are not logged into the TLO website, please log into the forums and then return here.';
+			echo '<h1>You are not logged into the website, please log into the forums and then return here.';
 		}
 	else
 		{
@@ -42,6 +42,7 @@
 									$links[] = $w;
 							$line = implode(' ', $links);
 						}
+					// Edit this list as you see fit
 					$profanity = array("shit", "Shit", "fuck", "Fuck", "cunt", "Cunt", "bastard", "Bastard", "SHIT", "FUCK", "CUNT", "BASTARD", "FUCKING", "fucking", "Fucking");
 					foreach ($profanity as $filter)
 						{

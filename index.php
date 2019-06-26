@@ -5,19 +5,18 @@
 		{
 			?>
 			<div id="shoutbox">
-				<h3>You are viewing our site as a guest, why not <a href="/forum/index.php?action=register">register</a> or <a href="/forum/index.php?action=login">login</a></h3>
 			</div>
 			<?php
 		}
 	else
 		{	
 ?>
-<script src="https://last-outpost.net/discord-link/jquery.min.js"></script>
+<script src="https://example.com/discord/jquery.min.js"></script>
 <script type="text/javascript">
 function refreshMessages()
 {
 	$.ajax({
-		url: 'https://last-outpost.net/discord-link/chat_new.php',
+		url: 'https://example.com/discord/chat.php',
 		type: 'GET',
 		dataType: 'html'
 	})
@@ -37,7 +36,7 @@ window.onload = refreshMessages();
 <script type="text/javascript">
 function sendmsg() {
 	var shout = $("#shout").val();
-	$.post("https://last-outpost.net/discord-link/processmsg_new.php", { shout: shout },
+	$.post("https://example.com/discord/processmsg.php", { shout: shout },
 	function(data) {
 	$('#shout_msg')[0].reset();
 	refreshMessages();

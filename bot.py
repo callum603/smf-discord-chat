@@ -19,9 +19,7 @@ async def on_ready():
 	print(client.user.id)
 
 	print('------')
-	await client.change_presence(game=discord.Game(name='!help or !info for more info'))
-	if not discord.opus.is_loaded():
-		discord.opus.load_opus('libopus.so.0')
+	await client.change_presence(game=discord.Game(name='Syncing your chat...'))
 
 @client.event
 async def on_message(message):
@@ -66,6 +64,29 @@ async def on_message(message):
 			if(general_connection.is_connected()):
 				cursor.close()
 				general_connection.close()
+				
+	if message.content.startswith('!ban'):
+		author = message.author
+		if "cabinet" in [y.name.lower() for y in author.roles]:
+			var = message.content
+			split_list = var.split(' ')
+			var1 = split_list[0]
+			var2 = split_list[1]
+			with codecs.open('bans.txt','a', encoding='utf8') as file:
+				file.write(var2 + '\n')
+			await client.send_message(message.channel, 'The Ban Has Successfuly Been Applied! ' + var2 + ' Has Been Banned From The Web Client!')
+		elif "president" in [y.name.lower() for y in author.roles]:
+			var = message.content
+			split_list = var.split(' ')
+			var1 = split_list[0]
+			var2 = split_list[1]
+			with codecs.open('bans.txt','a', encoding='utf8') as file:
+				file.write(var2 + '\n')
+			await client.send_message(message.channel, 'The Ban Has Successfuly Been Applied! ' + var2 + ' Has Been Banned From The Web Client For!')
+		else:
+			await client.send_message(message.channel, ':eyes: That will never happen, now please leave me alone...or I will ban you instead')
+	elif message.content.startswith('!'):
+		await client.send_message(message.channel, message.author.mention + ' 404 Command Not Found.')
 				
 async def sendmessage():
 	await client.wait_until_ready()
