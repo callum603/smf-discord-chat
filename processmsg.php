@@ -13,7 +13,7 @@
 		{
 			
 			$user = $user_info['name'];
-			$bans = 'bans.txt';
+			$bans = 'scripts/bans.txt';
 
 			if (exec('grep '.escapeshellarg($user).' '.$bans))
 				{
@@ -38,7 +38,7 @@
 							
 							$msg = '[WEB] '.$user. ': '.$message;
 					
-							$file = 'webchat.txt';
+							$file = 'scripts/webchat.txt';
 					
 							$current = file_get_contents($file);
 					

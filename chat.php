@@ -1,5 +1,6 @@
 <?php
 	require_once('../forum/SSI.php');
+	require_once('../forum/smf_2_api.php');
 	require_once('db.db');
 	
 	if ($context['user']['is_guest'])
@@ -48,7 +49,23 @@
 						{
 							$line = str_replace($filter,"****",$line);
 						}
-					echo '<tr style="vertical-align:top;width:100%;"><td style="white-space: nowrap"><b>['.$row['ftimestamp']. '] '.$row['user']. ':</b> </td><td style="width:100%;"> '.$line. '</td></tr>';
+					// Change the below line with the group ID numbers you wish to be able to access the moderation tools.  The array should be formatted like so: 1, 2, 3
+					$allowed_groups = array(1);
+					$can_see = FALSE;
+					foreach ($allowed_groups as $allowed)
+					if (in_array($allowed, $user_info['groups']))
+						{
+							$can_see = TRUE;
+							break;
+						}
+					if ($can_see)
+						{
+							echo '<tr style="vertical-align:top;width:100%;"><td style="white-space: nowrap"><b><a href="/discord/moderation.php?id='.$row['id']. '">*</a>['.$row['ftimestamp']. '] '.$row['user']. ':</b> </td><td style="width:100%;"> '.$line. '</td></tr>';
+						}
+					else
+						{
+							echo '<tr style="vertical-align:top;width:100%;"><td style="white-space: nowrap"><b>['.$row['ftimestamp']. '] '.$row['user']. ':</b> </td><td style="width:100%;"> '.$line. '</td></tr>';
+						}
 				}
 				echo '</table>';
 		}
