@@ -3,8 +3,6 @@
 	require_once('../forum/SSI.php');
 	require_once('../forum/smf_2_api.php');
 	
-	require_once('../forum/SSI.php');
-	
 	if ($context['user']['is_guest'])
 		{
 			echo '<h1>You are not logged into the forum, please log into the forums and then return here.';

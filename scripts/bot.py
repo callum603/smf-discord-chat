@@ -29,7 +29,7 @@ async def on_message(message):
 		general_author = general_author.split("#",4)[0]
 		
 		if general_author != client.user.name:
-			general_connection = mysql.connector.connect(host='localhost',database='web_main',user='user',password='pass')
+			general_connection = mysql.connector.connect(host='localhost',database='database',user='user',password='pass')
 			cursor = general_connection.cursor(prepared=True)
 			general_insert = """ INSERT INTO `discord_general` (`user`, `message`) VALUES (%s,%s)"""
 			general_msg = message.content
