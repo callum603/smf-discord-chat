@@ -60,7 +60,7 @@
 						}
 					if ($can_see)
 						{
-							echo '<tr style="vertical-align:top;width:100%;"><td style="white-space: nowrap"><b><a href="/discord/moderation.php?id='.$row['id']. '">*</a>['.$row['ftimestamp']. '] '.$row['user']. ':</b> </td><td style="width:100%;"> '.$line. '</td></tr>';
+							echo '<tr style="vertical-align:top;width:100%;"><td style="white-space: nowrap"><b><a href="/discord/moderation.php?id='.$row['id']. '" target="_blank">*</a>['.$row['ftimestamp']. '] '.$row['user']. ':</b> </td><td style="width:100%;"> '.$line. '</td></tr>';
 						}
 					else
 						{

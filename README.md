@@ -35,13 +35,16 @@ Screen
 
 9)	Open the processmsg.php file and update lines 3 & 4 to point to your SMF forum
 
-10) Follow the instructions here (https://discordpy.readthedocs.io/en/latest/discord.html) to create an application, get your bot token, and add your bot to your server
+10) Set permissions for bans.txt and webchat.txt to 777.  Then run the following from SSH while in the scripts folder `chmod +x bot.py run.sh start.sh`
 
-11) Copy the bot token and paste it into line 106 of bot.py.
+11) Follow the instructions here (https://discordpy.readthedocs.io/en/latest/discord.html) to create an application, get your bot token, and add your bot to your server
+
+12) Copy the bot token and paste it into line 106 of bot.py.
 	`client.run("YOUR BOT TOKEN HERE")`
 	
-12) SSH into your server as the user you wish to run the bot as and navigate to where the bot scripts are located, start the bot `python3 bot.py`. You are now ready to invite your bot to your server and begin syncing messages
-	You can embed this chat box on your forum by editting the index.template.php file in your SMF forums theme folder and adding the following lines to where you would like your chat to appear
+13) SSH into your server as the user you wish to run the bot as and navigate to where the bot scripts are located, start the bot `python3 bot.py`. You are now ready to invite your bot to your server and begin syncing messages
+	
+14)	You can embed this chat box on your forum by editting the index.template.php file in your SMF forums theme folder and adding the following lines to where you would like your chat to appear
 	`if ($context['user']['is_guest'])
 		{
 		}
