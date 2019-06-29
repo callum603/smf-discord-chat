@@ -49,3 +49,9 @@ Screen
 			include('../discord/index.php');
 		}`
 	Updating the include line to ensure it points to where you have uploaded that file.
+
+# DISCLAIMER
+
+I do not claim to be a master developer, this may not be the best way to do this, but it works and has been for almost a year now.
+
+What is contained here is a very basic version of what I have running elsewhere, a good starting ground for you to build upon if you would like it to have more features and functions.
