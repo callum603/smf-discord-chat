@@ -10,14 +10,11 @@ The web based chat uses permission groups from SMF which you will need to confiu
 
 Before installation you will require the following to be installed on your server
 
-Python 3
-
-PIP
-
+Python 3,
+PIP,
 Screen
 
 1)	Install the discord.py API
-
 	`python3 -m pip install -U discord.py`
 	
 2)	Add this file to your root SMF forum directory - https://github.com/AnthonyCalandra/SMF-Modifications/blob/master/WHMCS-SMFIntegration/smf_2_api.php
@@ -45,15 +42,13 @@ Screen
 	
 12) SSH into your server as the user you wish to run the bot as and navigate to where the bot scripts are located, start the bot `python3 bot.py`. You are now ready to invite your bot to your server and begin syncing messages
 	You can embed this chat box on your forum by editting the index.template.php file in your SMF forums theme folder and adding the following lines to where you would like your chat to appear
-	
 	`if ($context['user']['is_guest'])
 		{
 		}
 	else
 		{
 			include('../discord/index.php');
-		}`
-		
+		}`	
 	Updating the include line to ensure it points to where you have uploaded that file.
 
 # DISCLAIMER
