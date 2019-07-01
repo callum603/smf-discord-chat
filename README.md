@@ -54,7 +54,9 @@ Screen
 		}`	
 	Updating the include line to ensure it points to where you have uploaded that file.
 	
-15) You can set the run.sh file to be ran on server reboot if you want the bot to always be running, this can be done via cron
+15)	Open bot.py from the scripts folder and update line 14 to use the channel ID you want the bot to post into
+	
+16)	You can set the run.sh file to be ran on server reboot if you want the bot to always be running, this can be done via cron
 
 # DISCLAIMER
 
