@@ -11,6 +11,7 @@ client = discord.Client()
 strings = ("//DO NOT REMOVE//")
 version = '1.0'
 channel_general = 'general'
+channel = discord.Object(id='396360374535847940')
 
 @client.event
 async def on_ready():
